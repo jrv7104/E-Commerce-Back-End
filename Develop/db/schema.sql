@@ -8,15 +8,25 @@ CREATE DATABASE ecommerce_db;
 USE ecommerce_db;
 
 CREATE TABLE Category (
-    id (pk?) INT NOT NULL AUTO AUTO_INCREMENT
+    id INT NOT NULL AUTO AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Product (
-    id (pk?) INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(30) NOT NULL,
-    price DECIMAL UNSIGNED NOT NULL,
-    stock INT DEFAULT '10' NOT NULL,
-    category_id INT FOREIGN KEY (Category_id) REFERENCES Category(id)
+    price DECIMAL UNSIGNED NOT NULL IS DECIMAL,
+    stock INT DEFAULT '10' NOT NULL IS NUMERIC,
+    fk_category_id INT FOREIGN KEY (Category_id) REFERENCES Category(id)
 );
 
+CREATE TABLE Tag (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tag_name VARCHAR(30)
+);
+
+CREATE TABLE ProductTag (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fk_product_id INT FOREIGN KEY (Product_id) REFERENCES Product(id),
+    fk_tag_id INT FOREIGN KEY (Tag_id) REFERENCES Tag(id)
+);
