@@ -7,8 +7,15 @@ CREATE DATABASE ecommerce_db;
 
 USE ecommerce_db;
 
-CREATE TABLE category (
-    id INT NOT NULL AUTO AUTO_INCREMENT
-    category_name VARCHAR(30) NOT NULL,
-)
+CREATE TABLE Category (
+    id (pk?) INT NOT NULL AUTO AUTO_INCREMENT
+    category_name VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Product (
+    id (pk?) INT NOT NULL AUTO_INCREMENT,
+    product_name VARCHAR(30) NOT NULL,
+    price DECIMAL UNSIGNED NOT NULL,
+    stock INT NOT NULL 
+);
 
