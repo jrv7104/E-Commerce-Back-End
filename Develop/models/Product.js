@@ -1,5 +1,5 @@
 // import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, INTEGER } = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
 
@@ -29,8 +29,11 @@ Product.init(
       notNull: true,
     },
     category_id: {
-      //ask about how to set up category foreign key in this situation
-      foreignKey: true,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      },
     },
   },
   {
