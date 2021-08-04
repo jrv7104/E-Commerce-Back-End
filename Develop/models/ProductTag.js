@@ -14,13 +14,19 @@ ProductTag.init(
       primaryKey: true,
     },
     //ask for foreign key help
-    fk_product_id: {
+    product_id: {
       type: DataTypes.INTEGER,
-      foreignKey: true (Product_id),
+      references: {
+        model: 'Product',
+        key: 'id',
   },
-    fk_tag_id: {
+    tag_id: {
       type: DataTypes.INTEGER,
-      foreignKey: true (Tag_id),
+      references: {
+        model: 'tag',
+        key: 'id',
+        },
+      },
     },
 },
   {
