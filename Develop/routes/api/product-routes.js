@@ -27,6 +27,13 @@ router.get('/:id', (req, res) => {
 
 // create new product
 router.post('/', (req, res) => {
+Product.create(req.body)
+.tne(newProduct) => {
+  res.json(newProduct);
+})
+.catch((err) => {
+  res.json(err);
+});
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -101,6 +108,15 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then((deletedProduct) => {
+    res.json(deletedProduct);
+  })
+  .catch((err) => res.json(err));
 });
 
 module.exports = router;
