@@ -22,8 +22,7 @@ router.get('/:id', (req, res) => {
     },
   }).then(categoryData) => {
     res.json(categoryData);
-  });
-});
+  };
 
 router.post('/', (req, res) => {
   // create a new category
