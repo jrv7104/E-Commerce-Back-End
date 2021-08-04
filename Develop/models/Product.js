@@ -10,6 +10,28 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      notNull: true,
+    },
+    product_name: {
+    type: DataTypes.VARCHAR,
+    notNull: true,
+    },
+    price: {
+    type: DataTypes.DECIMAL,
+    notNull: true,
+    },
+    stock: {
+      type: DataTypes.INTEGER,
+      notNull: true,
+    },
+    category_id: {
+      //ask about how to set up category foreign key in this situation
+      foreignKey: true,
+    },
   },
   {
     sequelize,
