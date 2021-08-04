@@ -8,7 +8,7 @@ CREATE DATABASE ecommerce_db;
 USE ecommerce_db;
 
 CREATE TABLE Category (
-    id INT NOT NULL AUTO AUTO_INCREMENT PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(30) NOT NULL
 );
 
