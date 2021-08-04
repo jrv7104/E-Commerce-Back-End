@@ -28,8 +28,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new tag
   Product.create(req.body)
-  .then(newProduct) => {
-    res.json(newProduct);
+  .then(newProductTag) => {
+    res.json(newProductTag);
   })
   .catch((err) => {
     res.json(err);
@@ -38,11 +38,32 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Product.update
+  Product.update(
+    {
+      id: req.body.id,
+    },
+    {where: {
+      id: req.params.id,
+    },
+  }
+)
+.then(updatedProductTag) => {
+  res.json(updatedProductTag);
+})
+.catch((err) => res.json(err));
 });
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
+  ProductTag.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then((deletedProductTag) => {
+    res.json(deletedProductTag);
+  })
+  .catch((err) => res.json(err));
 });
 
 module.exports = router;
