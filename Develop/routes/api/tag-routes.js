@@ -15,14 +15,30 @@ router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   Category.findAll({
   // be sure to include its associated Product data
-});
+
+  order: [''],
+  where: {
+
+    is_something: true
+  },
+}).then(productTagData) => {
+  res.json(productTagData);
+};
 
 router.post('/', (req, res) => {
   // create a new tag
+  Product.create(req.body)
+  .then(newProduct) => {
+    res.json(newProduct);
+  })
+  .catch((err) => {
+    res.json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
+  Product.update
 });
 
 router.delete('/:id', (req, res) => {
