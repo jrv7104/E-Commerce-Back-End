@@ -14,7 +14,7 @@ Tag.init(
       primaryKey: true,
   },
   tag_name: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
   },
 },
   {

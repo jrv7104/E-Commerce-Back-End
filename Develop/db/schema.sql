@@ -15,9 +15,10 @@ CREATE TABLE Category (
 CREATE TABLE Product (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(30) NOT NULL,
-    price DECIMAL UNSIGNED NOT NULL IS DECIMAL,
-    stock INT DEFAULT '10' NOT NULL IS NUMERIC,
-    fk_category_id INT FOREIGN KEY (Category_id) REFERENCES Category(id)
+    price DECIMAL NOT NULL,
+    stock INT DEFAULT 10 NOT NULL,
+    Category_id INT,
+    FOREIGN KEY (Category_id) REFERENCES Category(id)
 );
 
 CREATE TABLE Tag (
@@ -27,6 +28,8 @@ CREATE TABLE Tag (
 
 CREATE TABLE ProductTag (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    fk_product_id INT FOREIGN KEY (Product_id) REFERENCES Product(id),
-    fk_tag_id INT FOREIGN KEY (Tag_id) REFERENCES Tag(id)
+    Tag_id INT,
+    Product_id INT,
+    FOREIGN KEY (Product_id) REFERENCES Product(id),
+    FOREIGN KEY (Tag_id) REFERENCES Tag(id)
 );

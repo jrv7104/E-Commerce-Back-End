@@ -17,7 +17,7 @@ Product.init(
       notNull: true,
     },
     product_name: {
-    type: DataTypes.VARCHAR,
+    type: DataTypes.STRING,
     notNull: true,
     },
     price: {
