@@ -25,15 +25,25 @@ router.get('/:id', (req, res) => {
   };
 
 router.post('/', (req, res) => {
-  // create a new category
-  Category.create(req.body)
-  .then(newCategory) => {
-    res.json(newCategory);
-  })
-  .catch((err) => {
-    res.json(err);
+try {
+  const newCategory = await Category.create({
+    category_name: req.body.category_name,
+    price: req.body.price,
+    stock: req.body.stock,
+    product_name: req.body.product_name,
+    tagID: req.body.tagID,
   });
-});
+
+// {
+//   // create a new category
+//   Category.create(req.body)
+//   .then(newCategory) => {
+//     res.json(newCategory);
+//   })
+//   .catch((err) => {
+//     res.json(err);
+//   });
+// });
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
