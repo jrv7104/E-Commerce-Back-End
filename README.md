@@ -11,3 +11,5 @@ This ended up being a massive challenge, and as I already mentioned it is a work
 3) The thing that also hurt was that I planned on getting help from my tutor for this assignment, but a family emergency popped up from his end and he cancelled right before our meeting. If I knew about the possibility of getting a substitute tutor for the week I definitely would have pursued that option.
 
 It is a little disappointing it will be an incomplete assignment for the second straight week, but I feel like I'm almost there with this assignment (and the previous one), so I hope with some more help I'll be able to resubmit it when it's done. As it is I wanted to show how much I got accomplished and see about any possible feedback.
+
+Video link: https://drive.google.com/file/d/1M9fg89q_NghGYYUd2-Ips65N-6c_A-SO/view
