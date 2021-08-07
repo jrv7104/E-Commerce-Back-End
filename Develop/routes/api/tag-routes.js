@@ -27,14 +27,27 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
-  Product.create(req.body)
-  .then(newProductTag) => {
-    res.json(newProductTag);
-  })
-  .catch((err) => {
-    res.json(err);
+try {
+  const newTag = await Tag.create({
+    tag_name: req.body.tag_name,
+    price: req.body.price,
+    stock: req.body.stock,
+    product_name: req.body.product_name,
+    category_name: req.body.category_name,
   });
-});
+
+  res.status(200).json(newTag);
+} catch (err) {
+  res.status(400).json(err);
+
+//   Product.create(req.body)
+//   .then(newProductTag) => {
+//     res.json(newProductTag);
+//   })
+//   .catch((err) => {
+//     res.json(err);
+//   });
+// });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
