@@ -27,13 +27,26 @@ router.get('/:id', (req, res) => {
 
 // create new product
 router.post('/', (req, res) => {
-Product.create(req.body)
-.tne(newProduct) => {
-  res.json(newProduct);
-})
-.catch((err) => {
-  res.json(err);
-});
+  try {
+    const newProduct = await Product.create({
+    product_name: req.body.product_name,
+    price: req. body.price,
+    stock: req.body.stock,
+    category_id: req.body.category_id,
+    tagId: req.body.tagId,
+  });
+
+  res.status(200).json(newProduct);
+} catch (err) {
+  res.status(400).json(err);
+
+// Product.create(req.body)
+// .tne(newProduct) => {
+//   res.json(newProduct);
+// })
+// .catch((err) => {
+//   res.json(err);
+// });
   /* req.body should look like this...
     {
       product_name: "Basketball",
