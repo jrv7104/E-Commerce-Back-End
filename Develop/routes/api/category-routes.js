@@ -34,6 +34,10 @@ try {
     tagID: req.body.tagID,
   });
 
+  res.status(200).json(newCategory);
+} catch (err) {
+  res.status(400).json(err);
+
 // {
 //   // create a new category
 //   Category.create(req.body)
