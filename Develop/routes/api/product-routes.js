@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
   try {
     const newProduct = await Product.create({
     product_name: req.body.product_name,
-    price: req. body.price,
+    price: req.body.price,
     stock: req.body.stock,
     category_id: req.body.category_id,
     tagId: req.body.tagId,
