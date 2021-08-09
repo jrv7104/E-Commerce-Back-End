@@ -11,29 +11,19 @@ Product.findAll({
   }).then(product => res.json(product))
 });
 //   // be sure to include its associated Category and Tag data
-// });
-
-router.get('/', (req, res) => {
-    // find all categories
-    // be sure to include its associated Products
-    Category.findAll({
-      include: [Product]
-    }).then(categories => res.json(categories))
-  });
 
 // // get one product
-// router.get('/:id', (req, res) => {
-//   // find a single product by its `id`
-//   Product.findAll({
-
-//     order: [''],
-//     where: {
-//   // be sure to include its associated Category and Tag data
-//     is_something: true
-//     },
-//   }).then(productData) => {
-//     res.json(productData);
-// };
+router.get('/:id', (req, res) => {
+    // find one category by its `id` value
+    // // be sure to include its associated Products
+    
+    Product.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [Category, Tag]
+    }).then(categories => res.json(categories))
+  });
 
 // // create new product
 // router.post('/', (req, res) => {
