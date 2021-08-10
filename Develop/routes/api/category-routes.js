@@ -28,23 +28,23 @@ router.post('/', (req, res) => {
   Category.create(req.body).then(newCat => res.json(newCat))
 });
 
-// router.put('/:id', (req, res) => {
-//   // update a category by its `id` value
-//   Category.findOne({  
-//     where: {
-//         id: req.params.id
-//     },
-//   }).then(updateCat => res.json(updateCat))
-// });
+router.put('/:id', (req, res) => {
+  // update a category by its `id` value
+  Category.findOne({  
+    where: {
+        id: req.params.id
+    },
+  }).then(updateCat => res.json(updateCat))
+});
 
 
-// router.delete('/:id', (req, res) => {
-//   // delete a category by its `id` value
-//   Category.findOne({
-//     where: {
-//       id: req.params.id
-//     },
-//   }).then(categories => res.json(categories))
-// });
+router.delete('/:id', (req, res) => {
+  // delete a category by its `id` value
+  Category.findOne({
+    where: {
+      id: req.params.id
+    },
+  }).then(categories => res.json(categories))
+});
 
-// module.exports = router;
+module.exports = router;
