@@ -1,16 +1,16 @@
-// const router = require('express').Router();
-// const { Product, Category, Tag, ProductTag } = require('../../models');
+const router = require('express').Router();
+const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// // // The `/api/products` endpoint
+// The `/api/products` endpoint
 
-// // // get all products
-// router.get('/', (req, res) => {
-// //   // find all products
-// Product.findAll({
-//     include: [Product, Tag]
-//   }).then(product => res.json(product))
-// });
-// //   // be sure to include its associated Category and Tag data
+// get all products
+router.get('/', (req, res) => {
+//   // find all products
+Product.findAll({
+    include: [Category, Tag]
+  }).then(product =>   res.json(product))
+})
+  // be sure to include its associated Category and Tag data
 
 // // // get one product
 // router.get('/:id', (req, res) => {
@@ -85,4 +85,4 @@
 // //   .catch((err) => res.json(err));
 // // });
 
-// // module.exports = router;
+module.exports = router;
