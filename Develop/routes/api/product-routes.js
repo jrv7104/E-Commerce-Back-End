@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 Product.findAll({
     include: [Category, Tag]
   }).then(product =>   res.json(product))
-})
+});
   // be sure to include its associated Category and Tag data
 
 // // // get one product
