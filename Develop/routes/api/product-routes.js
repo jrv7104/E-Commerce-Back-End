@@ -12,18 +12,18 @@ Product.findAll({
 });
   // be sure to include its associated Category and Tag data
 
-// // // get one product
-// router.get('/:id', (req, res) => {
-//     // find one category by its `id` value
-//     // // be sure to include its associated Products
+  router.get('/:id', (req, res) => {
+    // find one category by its `id` value
+    // // be sure to include its associated Products
     
-//     Product.findOne({
-//       where: {
-//         id: req.params.id
-//       },
-//       include: [Category, Tag]
-//     }).then(products => res.json(products))
-//   });
+    Product.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [Category, Tag]
+    }).then(categories => res.json(categories))
+  });
+  
 
 //   router.post('/', (req, res) => {
 
