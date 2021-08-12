@@ -21,12 +21,12 @@ Product.findAll({
         id: req.params.id
       },
       include: [Category, Tag]
-    }).then(categories => res.json(categories))
+    }).then(products => res.json(products))
   });
   
   router.post('/', (req, res) => {
 
-    Product.create(req.body).then(newCat => res.json(newCat))
+    Product.create(req.body).then(newProduct => res.json(newProduct))
   });
   
   router.put('/:id', (req, res) => {
