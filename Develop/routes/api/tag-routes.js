@@ -6,9 +6,12 @@ const { Tag, Product, ProductTag, Category } = require('../../models');
 
 router.get('/', (req, res) => {
       // find all tags
+      //method starts findAll with Tags
     Tag.findAll({
         include: Product,
+        //Tag includes information from Product route
         through: ProductTag
+        //through allows user to combine Tag and Product for ProductTag.js results        
       }).then(tag => res.json(tag))
     });
 
@@ -20,7 +23,9 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      include: [Product, Category]
+      //see findAll reference for ProductTag
+      include: Product,
+      through: ProductTag
     }).then(tag => res.json(tag))
   });
 
