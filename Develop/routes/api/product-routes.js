@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 //   // find all products
 Product.findAll({
     include: [Category, Tag]
-  }).then(product =>   res.json(product))
+  }).then(product => res.json(product))
 });
   // be sure to include its associated Category and Tag data
 
@@ -21,7 +21,7 @@ Product.findAll({
         id: req.params.id
       },
       include: [Category, Tag]
-    }).then(products => res.json(products))
+    }).then(product => res.json(product))
   });
   
   router.post('/', (req, res) => {
@@ -44,7 +44,7 @@ Product.findAll({
       where: {
         id: req.params.id
       },
-    }).then(products => res.json(products))
+    }).then(product => res.json(product))
   });
 
 
