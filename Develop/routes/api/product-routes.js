@@ -40,7 +40,7 @@ Product.findAll({
 
   router.delete('/:id', (req, res) => {
     // delete a category by its `id` value
-    Product.findOne({
+    Product.destroy({
       where: {
         id: req.params.id
       },

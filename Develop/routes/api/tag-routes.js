@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
 
   router.delete('/:id', (req, res) => {
     // delete a category by its `id` value
-    Tag.findOne({
+    Tag.destroy({
       where: {
         id: req.params.id
       },
