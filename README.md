@@ -8,4 +8,4 @@ Once the database is seeded the user can use Insomnia to create, get, update, vi
 
 Users will start by seeding the database, then going through the routes in Insomnia to view all of the categories, products and tags.
 
-Video link: https://drive.google.com/file/d/1M9fg89q_NghGYYUd2-Ips65N-6c_A-SO/view
+Video link: https://drive.google.com/file/d/1ab-7R68dRcMVtLfb4JuBnXlRPLkw29jW/view
