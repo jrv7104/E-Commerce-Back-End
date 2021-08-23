@@ -36,10 +36,12 @@ router.get('/:id', (req, res) => {
 
   router.put('/:id', (req, res) => {
     // update a category by its `id` value
-    Tag.findOne({  
+    Tag.update(req.body, {  
       where: {
           id: req.params.id
       },
+      include: Product,
+      through: ProductTag
     }).then(updateTag => res.json(updateTag))
   });
 
