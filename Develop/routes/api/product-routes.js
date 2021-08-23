@@ -31,7 +31,7 @@ Product.findAll({
   
   router.put('/:id', (req, res) => {
     // update a category by its `id` value
-    Product.findOne({  
+    Product.update(req.body, {  
       where: {
           id: req.params.id
       },
